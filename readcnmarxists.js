@@ -11,11 +11,14 @@
 
 (function() {
     'use strict';
+    const DOC = document;
     const css = `
 body {
     MARGIN-LEFT: 23em !important;
     MARGIN-RIGHT: 20em !important;
     background: none;
+    color: lawngreen;
+    font-size: larger;
 }
 table {
 display: initial;
@@ -30,4 +33,5 @@ GM_addStyle(`
 ${css}
 `);
     // Your code here...
+
 })();
