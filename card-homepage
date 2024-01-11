@@ -1,0 +1,33 @@
+// ==UserScript==
+// @name         卡片首页
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  不确定是不是B站app首页设置改变了主页，修改一下
+// @author       You
+// @match        https://www.bilibili.com/index.html
+// @match        https://www.bilibili.com/
+// @match        https://www.bilibili.com/?spm_id_from=*
+// @require      http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.3.js
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=bilibili.com
+// @grant        GM_addStyle
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    // section:nth-child(6), , section:nth-child(7),section:nth-child(14), section:nth-child(15), section:nth-child(25)直播动画音乐舞蹈鬼畜
+    const hiddenItem = [
+        '.floor-single-card',
+        //'.recommended-swipe',
+        '.disable-hover',
+        '.is-version8>*:nth-of-type(n+8)',
+    ]
+    
+const DOC = document;
+    // Your code here...
+    GM_addStyle(`
+${hiddenItem.toString()} {
+display: none;
+}
+`);
+
+})();
